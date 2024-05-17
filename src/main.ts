@@ -10,7 +10,7 @@ async function bootstrap() {
 
   const swagger = new DocumentBuilder()
     .setTitle('NestApp v1')
-    .setDescription('Isso é uma descrição')
+    .setDescription('OpenAPI documentation for GeekPersonalReview')
     .setVersion('1.0')
     .addTag('NestJs')
     .build();
