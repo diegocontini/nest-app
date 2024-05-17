@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ProdutoDTO } from '../produto/produto_dto';
 
 export class PaginatedResponseDTO<T> {
   page: number;

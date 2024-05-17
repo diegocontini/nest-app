@@ -1,9 +1,8 @@
 import { Body, Controller, Get, Query, Req } from '@nestjs/common';
 import { ApiOkResponsePaginatedDecorator } from 'src/common/decorators/api_ok_response_paginated_decorator';
 import { GetUserDTO } from './model/get.user.dto';
-import { ProdutoDTO } from 'src/dto/produto/produto_dto';
 
-import { PaginatedResponseDTO } from 'src/dto/response/paginated_response_dto';
+import { PaginatedResponseDTO } from 'src/common/model/response/paginated_response_dto';
 
 @Controller()
 export class UserController {

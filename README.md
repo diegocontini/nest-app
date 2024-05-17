@@ -40,3 +40,9 @@ $ npm run test:cov
 ```
 
 
+## Nest generate
+
+```bash
+# create module
+$ nest generate resource product
+```

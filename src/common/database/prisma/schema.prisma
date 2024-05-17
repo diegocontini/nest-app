@@ -7,19 +7,36 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id          Int       @id @default(autoincrement())
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  username    String
-  tweets      Tweet[]
+model Category {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  reviews   Review[]
 }
 
-model Tweet {
-  id          Int       @id @default(autoincrement())
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  content     String
-  user        User     @relation(fields: [userId], references: [id])
-  userId      Int
+model Review {
+  id         Int      @id @default(autoincrement())
+  content    String
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+  mediaId    Int
+  media      Media    @relation(fields: [mediaId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Media {
+  id      Int      @id @default(autoincrement())
+  title   String
+  type    String
+  reviews Review[]
+  todos   Todo[]
+}
+
+model Todo {
+  id       Int   @id @default(autoincrement())
+  mediaId  Int
+  priority Int
+  media    Media @relation(fields: [mediaId], references: [id])
 }
